@@ -1,15 +1,20 @@
 .nav-bar {
-    height: 50px;
+    position:fixed;
+    top:-2px;
+    height: 70px;
     background: rgb(2, 0, 36);
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 119, 0.43601190476190477) 35%, rgba(0, 212, 255, 1) 100%);
     color: white;
     width: 100%;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
 }
 
 .nav-items {
     float: right;
     margin-right: 1em;
-    padding: 1em 1em 1em 1em;
+    padding: 1.5em 1em 1em 1em;
+ 
 }
 
 #self {
@@ -24,4 +29,5 @@
     margin-left: 1em;
     margin-top: 0.5em;
     font-size: larger;
+    padding: 10px;
 }
