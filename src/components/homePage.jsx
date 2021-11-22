@@ -51,7 +51,7 @@ const HomePage = () => {
         )}
       </div>
       <div >
-      <ParticlesBg type="cobweb" bg={true} color="teal" className="pt"/>
+      {/* <ParticlesBg type="cobweb" bg={true} color="teal" className="pt"/> */}
       </div>
     </>
   );
