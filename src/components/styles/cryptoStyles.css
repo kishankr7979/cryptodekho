@@ -1,0 +1,20 @@
+.books-id {
+    padding: 1em 1em 1em 1em;
+}
+
+#coin-name-1 {
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #053645;
+}
+
+#_30d {
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: #053645;
+}
+
+.horizontal-table {
+    float: left;
+}

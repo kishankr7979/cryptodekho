@@ -1,0 +1,27 @@
+.nav-bar {
+    height: 50px;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 119, 0.43601190476190477) 35%, rgba(0, 212, 255, 1) 100%);
+    color: white;
+    width: 100%;
+}
+
+.nav-items {
+    float: right;
+    margin-right: 1em;
+    padding: 1em 1em 1em 1em;
+}
+
+#self {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+#active {
+    text-shadow: olive;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    float: left;
+    margin-left: 1em;
+    margin-top: 0.5em;
+    font-size: larger;
+}
