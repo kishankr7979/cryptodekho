@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './styles/home.css'
 import { Link } from "react-router-dom";
-import ParticlesBg from 'particles-bg'
 import axios from 'axios';
 const HomePage = () => {
   const [apiData, setapiData] = useState([]);
@@ -26,7 +25,7 @@ const HomePage = () => {
             <center>
               <table>
                 <tr>
-                  <th>Coin Name</th>
+                  <th><b>Coin Name</b></th>
                   <th>Price</th>
                   <th><span id="twenty-four">24H Change</span></th>
                 </tr>
@@ -51,7 +50,6 @@ const HomePage = () => {
         )}
       </div>
       <div >
-      <ParticlesBg type="cobweb" bg={true} color="teal" className="pt"/>
       </div>
     </>
   );
