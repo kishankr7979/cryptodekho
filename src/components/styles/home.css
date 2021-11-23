@@ -6,7 +6,9 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 70%; 
-    background:#63b365;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(73, 68, 165, 0.119) 0%, rgba(33,121,9,0.8421743697478992) 66%, rgb(21, 157, 116) 100%);
+color:#FFFFFF;
     border-radius: 1.5em;
  
 }
@@ -65,8 +67,9 @@ tr:nth-child(even) {
 }
 
 #twenty-four {
-    color: #0d4a79;
-    font-family: sans-serif;
+    color: #FFFFFF;
+    font-family: 'Times New Roman', Times, serif;
+    
 }
 
 .pt {
