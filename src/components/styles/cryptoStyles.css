@@ -1,11 +1,12 @@
 .books-id {
-    padding: 1em 1em 1em 1em;
+    padding: 4em 5em 1em 1em;
 }
 
 #coin-name-1 {
     font-size: 30px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #053645;
+    padding-top: 20px;
 }
 
 #_30d {
