@@ -71,7 +71,7 @@ const HomePage = () => {
                   </tr>
 
                   {currentPosts.sort((a, b) => b.price - a.price).map((book, index) => {
-                    let color = book['1d'].market_cap_change_pct < 0 ? 'red' : 'green';
+                    let color = book['1d'].market_cap_change_pct < 0 ? 'red' : 'white';
                     let fontDec = book['1d'].market_cap_change_pct < 0 ? '' : 'bolder';
                     // const saveData = (itemName, item) => {
                     //   localStorage.setItem(itemName, item)
