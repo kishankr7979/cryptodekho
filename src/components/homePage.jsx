@@ -10,13 +10,13 @@ import Loader from "react-loader-spinner";
 const PreLoader = () => {
   return (
     <div className="loader">
-    <Loader
-      type="Puff"
-      color="#00BFFF"
-      height={100}
-      width={100}
-      timeout={5000}
-    />
+      <Loader
+        type="Puff"
+        color="#00BFFF"
+        height={100}
+        width={100}
+        timeout={5000}
+      />
     </div>
   )
 }
@@ -47,62 +47,59 @@ const HomePage = () => {
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  if(!apiData[0]){
-    return <PreLoader />;
+  if (!apiData[0]) {
+    return (<><PreLoader /><h1 style={{ color: "#FFFFFF" }}>Crptoदेखो</h1></>);
   }
   else {
-  return (
-    <>
-      <div className="parent-div">
-        <div className="main-table-div">
-          <br/>
-          <br/> <br/> <br/>
-          <h1>Live Cryptocurrencies Prices</h1>
-        </div>
-        {apiData && (
-
-          <div className="books">
-            <center>
-              <table>
-                <tr>
-                  <th>Coin Name</th>
-                  <th>Price</th>
-                  <th><span id="twenty-four">24H Change</span></th>
-                </tr>
-
-                {currentPosts.sort((a, b) => b.price - a.price).map((book, index) => {
-                  let color = book['1d'].market_cap_change_pct < 0 ? 'red' : 'green';
-                  let fontDec = book['1d'].market_cap_change_pct < 0 ? '' : 'bolder';
-                  // const saveData = (itemName, item) => {
-                  //   localStorage.setItem(itemName, item)
-                  // }
-                  
-                  return (
-                    <tr>
-                      <td><img src={book.logo_url} height="30" width="30" alt="coin-logo" /><span id="coin-name"><Link to={{ pathname: book.id, about: { name: book['30d'] } }} style={{ textDecoration: "none", color: "black" }}>{book.name}</Link></span></td>
-                      <td>&#8377; {parseFloat(book.price).toFixed(2)}</td>
-                      <td><span id="current-price" style={{ color: color, fontWeight: fontDec }}>{book['1d'].market_cap_change_pct}</span></td>
-                    </tr>
-                  )
-                })}
-              </table>
-            </center>
+    return (
+      <>
+        <div className="parent-div">
+          <div className="main-table-div">
+            <br />
+            <br /> <br /> <br />
+            <h1 style={{ color: "white" }}>Live Cryptocurrencies Prices</h1>
           </div>
-        )}
-      </div>
-      
-      <div >
-      {/* <ParticlesBg type="cobweb" bg={true} color="teal" className="pt"/> */}
-      </div>
-      <Pagination
-        postsPerPage={postsPerPage}
-        totalPosts={apiData.length}
-        paginate={paginate}
-      />
-     
-    </>
-  );
-              }
+          {apiData && (
+
+            <div className="books">
+              <center>
+                <table>
+                  <tr>
+                    <th>Coin Name</th>
+                    <th>Price</th>
+                    <th><span id="twenty-four">24H Change</span></th>
+                  </tr>
+
+                  {currentPosts.sort((a, b) => b.price - a.price).map((book, index) => {
+                    let color = book['1d'].market_cap_change_pct < 0 ? 'red' : 'green';
+                    let fontDec = book['1d'].market_cap_change_pct < 0 ? '' : 'bolder';
+                    // const saveData = (itemName, item) => {
+                    //   localStorage.setItem(itemName, item)
+                    // }
+
+                    return (
+                      <tr>
+                        <td><img src={book.logo_url} height="30" width="30" alt="coin-logo" style={{ background: "white", borderRadius: "15px" }} /><span id="coin-name" ><Link to={{ pathname: book.id, about: { name: book['30d'] } }} style={{ textDecoration: "none", color: "#FFFFFF" }}>{book.name}</Link></span></td>
+                        <td>&#8377; {parseFloat(book.price).toFixed(2)}</td>
+                        <td><span id="current-price" style={{ color: color, fontWeight: fontDec }}>{book['1d'].market_cap_change_pct}</span></td>
+                      </tr>
+                    )
+                  })}
+                </table>
+              </center>
+            </div>
+          )}
+
+
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={apiData.length}
+            paginate={paginate}
+          />
+        </div>
+      </>
+    );
+  }
 }
 
 export default HomePage
