@@ -1,0 +1,9 @@
+/* html{
+    background-image: url('../assets/aboutLogo.jpg');
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center; 
+} */
+.parent-div{
+    margin-top:5em;
+}

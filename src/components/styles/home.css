@@ -2,15 +2,12 @@
     margin-left: 3em;
     margin-right: 3em;
 }
-body{
-    background-image: url('../assets/crypto-3.jpeg');
-    color:#FFFFFF;
-}
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 70%;
-    color:#FFFFFF;
+    width: 70%; 
+    background:#63b365;
+    border-radius: 1.5em;
  
 }
 th {
@@ -18,7 +15,7 @@ th {
     padding: 8px;
     font-size: larger;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color:#FFFFFF;
+ 
     
 }
 
@@ -26,22 +23,27 @@ table,
 td {
     text-align: left;
     padding: 8px;
-    color:#FFFFFF;
 
+    
   
 }
 td{
     border-radius: 2em;
-}
-tr:nth-child(even) {
-    background: #8ad0e6;
 
 }
+tr:nth-child(even) {
+    background: #09313e;
+    color:#FFFFFF;
+
+}
+
 
 #coin-name {
     margin-left: 1em;
     position: relative;
     top: -10px;
+    font-weight: bold;
+
 }
 
 .main-table-div {

@@ -1,5 +1,4 @@
 import React from 'react'
-
 const aboutPage = () => {
     return (
         <div className="parent-div">
