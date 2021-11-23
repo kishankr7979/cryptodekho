@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './styles/home.css'
 import { Link } from "react-router-dom";
+import ParticlesBg from 'particles-bg'
 import axios from 'axios';
 import Pagination from './genricComponent/Pagination';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
-const HomePage = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
-  const [loading, setLoading] = useState(false);
-  
+
 
 const PreLoader = () => {
   return (
@@ -19,29 +16,30 @@ const PreLoader = () => {
       color="#00BFFF"
       height={100}
       width={100}
-      timeout={3000}
     />
     </div>
   )
 }
-  let isLoading = true;
-  const [apiData, setapiData] = useState([]);
 
+
+const HomePage = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
+  const [loading, setLoading] = useState(false);
+  const [apiData, setapiData] = useState([]);
+  let isLoading = true;
   async function fetchData() {
     setLoading(true);
     let response = await axios.get('https://api.nomics.com/v1/currencies/ticker?key=616212bf5320283448a414ffea060cf51f3da963&interval=1d,30d&convert=INR&per-page=100&page=1')
     let a = response.data
-    console.log(a)
-    if (a
-      && Object.keys(a).length === 0
-      && Object.getPrototypeOf(a) === Object.prototype) {
-      isLoading = false;
-    }
+    console.log(a);
     setapiData(a);
     setLoading(false);
+
   };
   useEffect(() => fetchData(), []);
- // Get current posts
+
+  // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = apiData.slice(indexOfFirstPost, indexOfLastPost);
@@ -49,8 +47,8 @@ const PreLoader = () => {
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  if (!apiData[0]) {
-    return <PreLoader/>;
+  if(!apiData[0]){
+    return <PreLoader />;
   }
   else {
   return (
@@ -58,18 +56,20 @@ const PreLoader = () => {
       <div className="parent-div">
         <div className="main-table-div">
           <br/>
-          <br/>
+          <br/> <br/> <br/>
           <h1>Live Cryptocurrencies Prices</h1>
-            <div className="books">
-              <center>
-                <table>
-                  <tr>
-                    <th><b>Coin Name</b></th>
-                    <th>Price</th>
-                    <th><span id="twenty-four">24H Change</span></th>
-                  </tr>
         </div>
-        <div >
+        {apiData && (
+
+          <div className="books">
+            <center>
+              <table>
+                <tr>
+                  <th>Coin Name</th>
+                  <th>Price</th>
+                  <th><span id="twenty-four">24H Change</span></th>
+                </tr>
+
                 {currentPosts.sort((a, b) => b.price - a.price).map((book, index) => {
                   let color = book['1d'].market_cap_change_pct < 0 ? 'red' : 'green';
                   let fontDec = book['1d'].market_cap_change_pct < 0 ? '' : 'bolder';
@@ -102,9 +102,7 @@ const PreLoader = () => {
      
     </>
   );
-      
-  }
-
+              }
 }
 
 export default HomePage
