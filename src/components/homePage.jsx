@@ -6,7 +6,12 @@ import axios from 'axios';
 import Pagination from './genricComponent/Pagination';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
-
+  function supplyToken(tokenIn){
+    let token = tokenIn
+    console.log(token)
+    console.log('h')
+    localStorage.setItem('token', token)
+  }
 const PreLoader = () => {
   return (
     <div className="loader">
@@ -37,7 +42,10 @@ const HomePage = () => {
     setLoading(false);
 
   };
-  useEffect(() => fetchData(), []);
+  useEffect(() => {
+    fetchData();
+    window.supplyToken = supplyToken
+  }, []);
 
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
